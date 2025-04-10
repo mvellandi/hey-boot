@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Hey Boot.dev! I'd like to work with y'all as a marketing engineer
+    </title>
+    <meta
+      name="description"
+      content="I love what y'all are doing, and this website is my open application to build the world's best educational gaming brand."
+    />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://heyboot.net/" />
+    <meta
+      property="og:title"
+      content="Hey Boot.dev! I'd like to work with y'all as a marketing engineer"
+    />
+    <meta
+      property="og:description"
+      content="I love what y'all are doing, and this website is my open application to build the world's best educational gaming brand."
+    />
+    <meta property="og:image" content="/OG-social-image.jpg" />
+    <meta
+      property="og:image:alt"
+      content="Hey Boot.dev! I'd like to work with y'all as a marketing engineer"
+    />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image" content="/OG-social-image.webp" />
+    <meta
+      property="og:image:alt"
+      content="Hey Boot.dev! I'd like to work with y'all as a marketing engineer"
+    />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Boot Rocks" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://heyboot.net/" />
+    <meta
+      name="twitter:title"
+      content="Hey Boot.dev! I'd like to work with y'all as a marketing engineer"
+    />
+    <meta
+      name="twitter:description"
+      content="I love what y'all are doing, and this website is my open application to build the world's best educational gaming brand."
+    />
+    <meta name="twitter:image" content="/OG-social-image.jpg" />
+    <meta
+      name="twitter:image:alt"
+      content="Hey Boot.dev! I'd like to work with y'all as a marketing engineer"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <!-- Leave this analytics script for later -->
+    <!-- <script
+      defer
+      data-domain="heyboot.net"
+      src="https://plausible.io/js/script.hash.outbound-links.js"
+    ></script> -->
+  </head>
+  <body class="container standard-page">
+    <!-- Site Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <div class="title-section">
+          <a class="site-title" href="/">Hey Boot!</a>
+          <h1 class="subtitle">subtitle</h1>
+        </div>
+        <nav class="nav-section">
+          <div class="desktop">
+            <a href="./about.html">About</a>
+          </div>
+          <a
+            href="#"
+            class="mobile-menu-button"
+            role="button"
+            aria-expanded="false"
+            >Menu</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Video Player Section (if needed) -->
+      <!-- Keep this code here for reference later -->
+      <!-- <div class="video-container">
+        <iframe
+          id="vimeo-player"
+          src=""
+          class="absolute inset-0 w-full h-full"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          style="background: #000000"
+        ></iframe> 
+      </div> -->
+
+      <!-- Content Section -->
+      <section class="content-section">
+        <h2>headline</h2>
+
+        <p>text</p>
+      </section>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+      <div class="mobile-menu-panel">
+        <button class="mobile-menu-close">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <filter
+                id="cross-shadow"
+                x="-20%"
+                y="-20%"
+                width="140%"
+                height="140%"
+              >
+                <feGaussianBlur in="SourceAlpha" stdDeviation="1" />
+                <feOffset dx="1" dy="1" result="offsetblur" />
+                <feFlood flood-color="rgba(0,0,0,0.5)" />
+                <feComposite in2="offsetblur" operator="in" />
+                <feMerge>
+                  <feMergeNode />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs>
+            <path
+              d="M2 2L18 18M18 2L2 18"
+              stroke="white"
+              stroke-width="3"
+              stroke-linecap="round"
+              filter="url(#cross-shadow)"
+            />
+          </svg>
+        </button>
+        <ul>
+          <li data-href="./index.html">Home</li>
+          <li data-href="./about.html">About</li>
+        </ul>
+      </div>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
