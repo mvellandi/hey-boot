@@ -3,8 +3,8 @@ import Player from "@vimeo/player";
 
 // Video IDs for each player
 const VIMEO_VIDEO_IDS = {
-  "vimeo-player-1": "1072643347", // Replace with your actual video ID
-  "vimeo-player-2": "1072643347", // Replace with your actual video ID
+  pitch: "1074583104", // Replace with your actual pitch video ID
+  about: "1074594102", // Replace with your actual about me video ID
 };
 
 // State Management
@@ -54,7 +54,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         // Wait for player to be ready
         await player.ready();
-        console.log(`Player ${playerId} initialized successfully`);
       } catch (error) {
         console.error(`Error initializing player ${playerId}:`, error);
       }

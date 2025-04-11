@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     try {
       await player.ready();
-      console.log("Vimeo player initialized successfully");
     } catch (error) {
       console.error("Error initializing Vimeo player:", error);
     }
