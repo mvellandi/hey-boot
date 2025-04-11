@@ -325,6 +325,157 @@ body {
   width: 100%;
   height: 100%;
   background: #000000;
+
+  & .mobile-thumbnail {
+    display: flex;
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+  }
+
+  & .desktop-video {
+    display: none;
+
+    @media (min-width: 1024px) {
+      display: block;
+    }
+  }
+}
+
+/* Video Thumbnail Styles */
+.video-thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.video-thumbnail:hover img {
+  transform: scale(1.05);
+}
+
+.play-button {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  padding: 0.2rem;
+  color: white;
+  transition: background-color 0.3s ease;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.video-thumbnail:hover .play-button {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Modal Styles */
+.video-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.video-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-content {
+  position: relative;
+  width: 98%;
+  height: 98%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-video-container {
+  width: 98%;
+  max-width: 1200px;
+  aspect-ratio: 16/9;
+  position: relative;
+  /* background: var(--color-red-900); */
+  border-radius: 20px;
+  border: 7px solid var(--color-earth);
+  box-shadow: inset 3px 3px 5px var(--color-brown-950),
+    inset -3px -3px 5px var(--color-brown-950);
+  padding: 1rem;
+  /* overflow: hidden; */
+}
+
+.modal-video-container iframe {
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 98%;
+  height: 98%;
+  background: #000000;
+  z-index: 10;
+}
+
+.modal-close {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  transform: none;
+  background: var(--color-landscape);
+  box-shadow: inset 2px 2px 3px var(--color-emerald-950),
+    inset -2px -2px 3px var(--color-emerald-950),
+    0 0 0 2px var(--color-brown-950);
+  border: 5px solid var(--color-earth);
+  border-radius: 100%;
+  padding: 12px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+/* Responsive adjustments for the modal */
+/* @media (max-width: 768px) {
+  .modal-video-container {
+    max-width: 90%;
+    border-width: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-video-container {
+    max-width: 95%;
+    border-width: 4px;
+  }
+} */
+
+.modal-close:hover {
+  background: rgba(0, 0, 0, 0.9);
 }
 
 /* Content Section Styles */

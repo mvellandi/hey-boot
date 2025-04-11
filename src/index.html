@@ -100,20 +100,6 @@
 
     <!-- Main Content -->
     <div class="main-content">
-      <!-- Video Player Section (if needed) -->
-      <!-- Keep this code here for reference later -->
-      <!-- <div class="video-container">
-        <iframe
-          id="vimeo-player"
-          src=""
-          class="absolute inset-0 w-full h-full"
-          frameborder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen
-          style="background: #000000"
-        ></iframe> 
-      </div> -->
-
       <!-- Content Section -->
       <section class="content-section">
         <div class="intro">
@@ -140,29 +126,71 @@
           <div class="video">
             <h2 class="header2">My Pitch</h2>
             <div class="video-container">
+              <!-- Desktop iframe (hidden on mobile) -->
               <iframe
                 id="pitch"
-                src=""
-                class="absolute inset-0 w-full h-full"
+                class="absolute inset-0 w-full h-full desktop-video"
                 frameborder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowfullscreen
                 style="background: #000000"
               ></iframe>
+              <!-- Mobile thumbnail (hidden on desktop) -->
+              <div
+                class="video-thumbnail mobile-thumbnail"
+                data-video-id="pitch"
+              >
+                <img
+                  src="/pitch-thumbnail.webp"
+                  alt="My Pitch Video Thumbnail"
+                />
+                <div class="play-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    width="48"
+                    height="48"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
           <div class="video">
             <h2 class="header2">About Me</h2>
             <div class="video-container">
+              <!-- Desktop iframe (hidden on mobile) -->
               <iframe
                 id="about"
-                src=""
-                class="absolute inset-0 w-full h-full"
+                class="absolute inset-0 w-full h-full desktop-video"
                 frameborder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowfullscreen
                 style="background: #000000"
               ></iframe>
+              <!-- Mobile thumbnail (hidden on desktop) -->
+              <div
+                class="video-thumbnail mobile-thumbnail"
+                data-video-id="about"
+              >
+                <img
+                  src="/about-thumbnail.webp"
+                  alt="About Me Video Thumbnail"
+                />
+                <div class="play-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    width="48"
+                    height="48"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -211,6 +239,57 @@
           <li data-href="./index.html">Home</li>
           <li data-href="./about.html">About</li>
         </ul>
+      </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+      <div class="modal-content">
+        <div class="modal-video-container">
+          <button class="modal-close">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <filter
+                  id="modal-cross-shadow"
+                  x="-20%"
+                  y="-20%"
+                  width="140%"
+                  height="140%"
+                >
+                  <feGaussianBlur in="SourceAlpha" stdDeviation="1" />
+                  <feOffset dx="1" dy="1" result="offsetblur" />
+                  <feFlood flood-color="rgba(0,0,0,0.5)" />
+                  <feComposite in2="offsetblur" operator="in" />
+                  <feMerge>
+                    <feMergeNode />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+              <path
+                d="M2 2L18 18M18 2L2 18"
+                stroke="white"
+                stroke-width="3"
+                stroke-linecap="round"
+                filter="url(#modal-cross-shadow)"
+              />
+            </svg>
+          </button>
+          <iframe
+            id="modalVideo"
+            src=""
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            style="background: #000000"
+          ></iframe>
+        </div>
       </div>
     </div>
 
