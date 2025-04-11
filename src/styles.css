@@ -205,7 +205,7 @@ body {
 
       @media (min-width: 1024px) {
         display: flex;
-        gap: 1.5rem;
+        gap: 3rem;
       }
 
       & a {
@@ -296,29 +296,29 @@ body {
   margin-bottom: 2rem;
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000000;
+  & iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
 
-  & .mobile-thumbnail {
-    display: flex;
+    & .mobile-thumbnail {
+      display: flex;
 
-    @media (min-width: 1024px) {
-      display: none;
+      @media (min-width: 1024px) {
+        display: none;
+      }
     }
-  }
 
-  & .desktop-video {
-    display: none;
+    & .desktop-video {
+      display: none;
 
-    @media (min-width: 1024px) {
-      display: block;
+      @media (min-width: 1024px) {
+        display: block;
+      }
     }
   }
 }
@@ -335,18 +335,18 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+    border: 1px solid var(--color-cyan-900);
+  }
 }
 
-.video-thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  transition: transform 0.3s ease;
-  border: 1px solid var(--color-cyan-900);
-}
-
-.video-thumbnail:hover img {
+.video-thumbnail .video-thumbnail:hover img {
   transform: scale(1.05);
 }
 
@@ -613,11 +613,15 @@ body {
     line-height: 1.1;
   }
 
-  & p {
+  & p,
+  ol,
+  ul {
     font-size: 1.3rem;
     font-weight: 300;
     line-height: 1.4;
     margin-bottom: 1.2rem;
+    list-style: disc;
+    list-style-position: inside;
     /* text-wrap: balance; */
 
     @media (min-width: 768px) {
@@ -633,10 +637,24 @@ body {
       font-size: 1.4rem;
       line-height: 1.55;
     }
-    @media (min-width: 2300px) {
-      font-size: 1.5rem;
-      line-height: 1.6;
+  }
+
+  & ul,
+  ol {
+    padding-left: 0em;
+  }
+
+  & li {
+    padding-left: 1em; /* Space between bullet and text */
+    text-indent: -1em; /* Negative indent for "hanging" effect */
+
+    @media (max-width: 1024px) {
+      margin-bottom: 1rem;
     }
+  }
+
+  li:last-of-type {
+    margin-bottom: 0;
   }
 }
 
