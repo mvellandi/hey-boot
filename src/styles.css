@@ -14,14 +14,14 @@
   --video-page-max-width: 1700px;
   --standard-page-max-width: 1000px;
 
-  --main-content-padT: 4rem;
-  --main-content-padT-sm: 7rem;
-  --main-content-padT-md: 8rem;
-  --main-content-padT-lg: 4rem;
-  --main-content-padT-xl: 5.5rem;
-  --main-content-padT-2xl: 5.8rem; /* 1536 */
-  --main-content-padT-hd: 6rem; /* 1920 */
-  --main-content-padT-2hd: 8.2rem; /* 2300 */
+  --main-content-padT: 5.5rem;
+  --main-content-padT-sm: 9rem;
+  --main-content-padT-md: 9rem;
+  --main-content-padT-lg: 6rem;
+  --main-content-padT-xl: 7rem;
+  --main-content-padT-2xl: 7rem; /* 1536 */
+  --main-content-padT-hd: 9rem; /* 1920 */
+  --main-content-padT-2hd: 12rem; /* 2300 */
 
   --header-text: 1.5rem;
   --header-text-lg: 1.6rem;
@@ -341,7 +341,9 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 0.5rem;
   transition: transform 0.3s ease;
+  border: 1px solid var(--color-cyan-900);
 }
 
 .video-thumbnail:hover img {
@@ -350,8 +352,8 @@ body {
 
 .play-button {
   position: absolute;
-  bottom: 0px;
-  left: 0px;
+  bottom: 2px;
+  left: 2px;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 50%;
   padding: 0.2rem;
@@ -482,29 +484,27 @@ body {
 /* Content Section Styles */
 .content-section {
   color: var(--color-white);
-  padding: 2rem 0;
   width: 100%;
-  padding-top: 2rem;
   padding-bottom: 6rem;
   width: 100%;
-
-  @media (min-width: 1024px) {
-    padding-top: 2.5em;
-  }
-  @media (min-width: 1280px) {
-    padding-top: 1em;
-  }
-  @media (min-width: 1536px) {
-    padding-top: 2em;
-  }
-  @media (min-width: 1920px) {
-    padding-top: 2em;
-  }
 
   & .intro-header {
     display: flex;
     flex-direction: column;
-    /* margin-bottom: 0.rem; */
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: center;
+      justify-items: flex-start;
+      gap: 3rem;
+      margin-bottom: 2rem;
+    }
+    @media (min-width: 1024px) {
+      margin-bottom: 2rem;
+    }
+    @media (min-width: 2300px) {
+      margin-bottom: 2.8rem;
+    }
 
     & .text {
       margin-top: 1.2rem;
@@ -513,17 +513,12 @@ body {
       }
     }
 
-    @media (min-width: 1024px) {
-      flex-direction: row;
-      align-items: center;
-      justify-items: flex-start;
-      gap: 3rem;
-      margin-bottom: 2rem;
-    }
-
     & .header2 {
+      margin-bottom: 0.3rem;
+
       @media (min-width: 1024px) {
         font-size: 3rem;
+        margin-bottom: 0.1rem;
       }
     }
 
@@ -535,20 +530,34 @@ body {
       @media (min-width: 1024px) {
         max-width: 30ch;
       }
+      @media (min-width: 1536px) {
+        font-size: 1.6rem;
+        font-weight: 300;
+      }
+      @media (min-width: 1920px) {
+        font-size: 1.7rem;
+        font-weight: 300;
+      }
     }
   }
 
   & .intro-body {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 
-    @media (min-width: 768px) {
-      margin-bottom: 2rem;
+    @media (min-width: 640px) {
+      margin-bottom: 3rem;
     }
     @media (min-width: 1024px) {
-      margin-bottom: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    @media (min-width: 1280px) {
+      margin-bottom: 2.5rem;
     }
     @media (min-width: 1920px) {
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
+    }
+    @media (min-width: 2300px) {
+      margin-bottom: 4rem;
     }
 
     & p:last-of-type {
@@ -557,15 +566,15 @@ body {
   }
 
   & .videos {
-    padding-top: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-    /* width: 100%; */
+    gap: 1rem;
 
+    @media (min-width: 640px) {
+      gap: 3rem;
+    }
     @media (min-width: 1024px) {
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      gap: 4rem;
     }
   }
 
@@ -717,19 +726,19 @@ body.standard-page .main-content {
     padding-top: var(--main-content-padT-sm);
   }
   @media (min-width: 768px) {
-    padding-top: 7rem;
+    padding-top: var(--main-content-padT-md);
   }
   @media (min-width: 1024px) {
     padding-top: var(--main-content-padT-lg);
   }
   @media (min-width: 1280px) {
-    padding-top: 7rem;
+    padding-top: var(--main-content-padT-xl);
   }
   @media (min-width: 1536px) {
     padding-top: var(--main-content-padT-2xl);
   }
   @media (min-width: 1920px) {
-    padding-top: 9rem;
+    padding-top: var(--main-content-padT-hd);
   }
   @media (min-width: 2300px) {
     padding-top: var(--main-content-padT-2hd);
@@ -869,5 +878,9 @@ body.standard-page .main-content {
   @media (min-width: 1024px) {
     margin-left: initial;
     margin-right: initial;
+  }
+  @media (min-width: 1920px) {
+    width: 250px;
+    height: 250px;
   }
 }
