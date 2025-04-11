@@ -146,29 +146,6 @@ function initModal() {
       // Show the modal
       modal.classList.add("active");
       document.body.style.overflow = "hidden";
-
-      // Initialize the modal player
-      try {
-        modalPlayer = new Player(modalVideo, {
-          id: vimeoId,
-          width: "100%",
-          height: "100%",
-          responsive: true,
-          autoplay: true,
-          controls: true,
-          title: false,
-          byline: false,
-          portrait: false,
-          playsinline: true,
-          background: false,
-          quality: "1080p",
-          dnt: 1,
-          cc: false,
-          texttrack: false,
-        });
-      } catch (error) {
-        console.error("Error initializing modal player:", error);
-      }
     });
   });
 
@@ -195,13 +172,6 @@ function initModal() {
   function closeModal() {
     modal.classList.remove("active");
     document.body.style.overflow = "";
-
-    // Pause and destroy the modal player
-    if (modalPlayer) {
-      modalPlayer.pause();
-      modalPlayer.destroy();
-      modalPlayer = null;
-    }
 
     // Clear the iframe source
     modalVideo.src = "";

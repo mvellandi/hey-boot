@@ -429,7 +429,6 @@ body {
   box-shadow: inset 3px 3px 5px var(--color-brown-950),
     inset -3px -3px 5px var(--color-brown-950);
   padding: 1rem;
-  /* overflow: hidden; */
 }
 
 .modal-video-container iframe {
@@ -458,21 +457,6 @@ body {
   cursor: pointer;
   z-index: 20;
 }
-
-/* Responsive adjustments for the modal */
-/* @media (max-width: 768px) {
-  .modal-video-container {
-    max-width: 90%;
-    border-width: 5px;
-  }
-}
-
-@media (max-width: 480px) {
-  .modal-video-container {
-    max-width: 95%;
-    border-width: 4px;
-  }
-} */
 
 .modal-close:hover {
   background: rgba(0, 0, 0, 0.9);
