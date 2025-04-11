@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       if (iframe) {
         // Set the iframe source with specific parameters
-        iframe.src = `https://player.vimeo.com/video/${videoId}?background=0&autopause=0&transparent=0&autoplay=0&loop=0&title=0&byline=0&portrait=0&quality=1080p&dnt=1&controls=1&cc=false&texttrack=false`;
+        iframe.src = `https://player.vimeo.com/video/${videoId}?background=0&autopause=0&transparent=0&autoplay=0&loop=0&title=0&byline=0&portrait=0&quality=1080p&dnt=1&controls=1&cc=false&texttrack=false&playsinline=1&pip=0&speed=0&share=0&collections=0&quality=0&transcript=0&airplay=0`;
 
         // Show the iframe immediately
         iframe.style.display = "block";
@@ -45,10 +45,16 @@ document.addEventListener("DOMContentLoaded", async () => {
             portrait: false,
             playsinline: true,
             background: false,
-            quality: "1080p",
+            quality: false,
             dnt: 1,
             cc: false,
             texttrack: false,
+            pip: false,
+            speed: false,
+            share: false,
+            collections: false,
+            transcript: false,
+            airplay: false,
           });
 
           // Store the player instance
@@ -90,7 +96,7 @@ async function initializePlayers() {
 
     if (iframe && !iframe.src) {
       // Set the iframe source with specific parameters
-      iframe.src = `https://player.vimeo.com/video/${videoId}?background=0&autopause=0&transparent=0&autoplay=0&loop=0&title=0&byline=0&portrait=0&quality=1080p&dnt=1&controls=1&cc=false&texttrack=false`;
+      iframe.src = `https://player.vimeo.com/video/${videoId}?background=0&autopause=0&transparent=0&autoplay=0&loop=0&title=0&byline=0&portrait=0&quality=1080p&dnt=1&controls=1&cc=false&texttrack=false&playsinline=1&pip=0&speed=0&share=0&collections=0&quality=0&transcript=0&airplay=0`;
 
       // Show the iframe immediately
       iframe.style.display = "block";
@@ -109,10 +115,16 @@ async function initializePlayers() {
           portrait: false,
           playsinline: true,
           background: false,
-          quality: "1080p",
+          quality: false,
           dnt: 1,
           cc: false,
           texttrack: false,
+          pip: false,
+          speed: false,
+          share: false,
+          collections: false,
+          transcript: false,
+          airplay: false,
         });
 
         // Store the player instance
@@ -141,7 +153,7 @@ function initModal() {
       const vimeoId = VIMEO_VIDEO_IDS[videoId];
 
       // Set the modal iframe source
-      modalVideo.src = `https://player.vimeo.com/video/${vimeoId}?background=0&autopause=0&transparent=0&autoplay=1&loop=0&title=0&byline=0&portrait=0&quality=1080p&dnt=1&controls=1&cc=false&texttrack=false`;
+      modalVideo.src = `https://player.vimeo.com/video/${vimeoId}?background=0&autopause=0&transparent=0&autoplay=1&loop=0&title=0&byline=0&portrait=0&quality=1080p&dnt=1&controls=1&cc=false&texttrack=false&playsinline=1&pip=0&speed=0&share=0&collections=0&quality=0&transcript=0&airplay=0`;
 
       // Show the modal
       modal.classList.add("active");

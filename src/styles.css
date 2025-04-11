@@ -420,7 +420,7 @@ body {
 
 .modal-video-container {
   width: 98%;
-  max-width: 1200px;
+  max-width: 1400px;
   aspect-ratio: 16/9;
   position: relative;
   /* background: var(--color-red-900); */
@@ -429,6 +429,10 @@ body {
   box-shadow: inset 3px 3px 5px var(--color-brown-950),
     inset -3px -3px 5px var(--color-brown-950);
   padding: 1rem;
+
+  @media (min-width: 1920px) {
+    max-width: 1700px;
+  }
 }
 
 .modal-video-container iframe {
@@ -436,8 +440,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 98%;
-  height: 98%;
+  width: 100%;
+  height: 100%;
   background: #000000;
   z-index: 10;
 }
@@ -456,6 +460,39 @@ body {
   padding: 12px;
   cursor: pointer;
   z-index: 20;
+}
+
+.modal-close-icon {
+  width: 20px;
+  height: 20px;
+}
+
+@media (min-width: 1024px) {
+  .modal-close {
+    top: -40px;
+    right: -40px;
+    padding: 16px;
+    border-width: 6px;
+  }
+
+  .modal-close-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .modal-close {
+    top: -50px;
+    right: -50px;
+    padding: 20px;
+    border-width: 7px;
+  }
+
+  .modal-close-icon {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .modal-close:hover {
