@@ -402,7 +402,7 @@ body {
 
 .modal-video-container {
   width: 98%;
-  max-width: 1400px;
+  max-width: 1200px;
   aspect-ratio: 16/9;
   position: relative;
   /* background: var(--color-red-900); */
@@ -413,7 +413,7 @@ body {
   padding: 1rem;
 
   @media (min-width: 1920px) {
-    max-width: 1700px;
+    max-width: 1600px;
   }
 }
 
