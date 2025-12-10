@@ -8,7 +8,15 @@ const copyCNAME = () => {
   return {
     name: "copy-cname",
     closeBundle: () => {
-      fs.copyFileSync("CNAME", "docs/CNAME");
+      const sourcePath = path.resolve(__dirname, "CNAME");
+      const destPath = path.resolve(__dirname, "../docs/CNAME");
+      if (fs.existsSync(sourcePath)) {
+        const destDir = path.dirname(destPath);
+        if (!fs.existsSync(destDir)) {
+          fs.mkdirSync(destDir, { recursive: true });
+        }
+        fs.copyFileSync(sourcePath, destPath);
+      }
     },
   };
 };
