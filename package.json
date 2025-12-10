@@ -17,6 +17,7 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.0.17",
     "@vimeo/player": "^2.26.0",
+    "staticguard": "^1.0.1",
     "tailwindcss": "^4.0.17"
   }
 }

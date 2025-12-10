@@ -116,24 +116,25 @@
 
     <script type="module" src="./script.js"></script>
     <script type="module">
-      import StaticGuard from '../staticguard/dist/staticguard.js';
+      import StaticGuard from "../staticguard/dist/staticguard.js";
 
       StaticGuard.init({
-        passwordHash: '210ba3adce0d2c9e4a3c30d0b84ffa0995ca2b8fa69ee0d1910e3732aa345e55',
-        salt: 'hey-boot-salt',
-        headerText: 'Private Site',
-        subheaderText: 'This content is password protected.',
-        guardImage: '/gaurdian-sm2.png',
+        passwordHash:
+          "210ba3adce0d2c9e4a3c30d0b84ffa0995ca2b8fa69ee0d1910e3732aa345e55",
+        salt: "hey-boot-salt",
+        headerText: "Private Site",
+        subheaderText: "This content is password protected.",
+        guardImage: "/gaurdian-sm2.png",
         theme: {
-          primaryColor: '#8b4513',
-          backgroundColor: '#faf8f6',
-          pageBackgroundColor: '#3e2723',
-          imageBackgroundColor: '#000000',
-          textColor: '#342e29',
-          errorColor: '#991b1b'
+          primaryColor: "#8b4513",
+          backgroundColor: "#faf8f6",
+          pageBackgroundColor: "#3e2723",
+          imageBackgroundColor: "#000000",
+          textColor: "#342e29",
+          errorColor: "#991b1b",
         },
         maxAttempts: 5,
-        lockoutDuration: 300000
+        lockoutDuration: 300000,
       });
     </script>
   </body>

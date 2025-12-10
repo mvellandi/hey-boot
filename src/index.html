@@ -56,13 +56,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="../staticguard/dist/staticguard.css" />
-    <style>
-      /* Prevent flash of unstyled content before StaticGuard loads */
-      body > *:not(#staticguard-overlay) {
-        visibility: hidden;
-      }
-    </style>
+    <link rel="stylesheet" href="/staticguard.css" />
+    <script type="module" src="./staticguard-config.js"></script>
     <!-- Leave this analytics script for later -->
     <!-- <script
       defer
@@ -143,11 +138,21 @@
             <h2 class="header2">My Pitch</h2>
             <div class="video-container">
               <!-- Placeholder text for demo mode -->
-              <div class="video-placeholder" style="padding: 2rem; background: #1a1a1a; border-radius: 8px; color: #888;">
-                <p style="margin: 0; text-align: center; font-size: 0.95rem;">
-                  <strong style="color: #aaa;">Video Placeholder</strong><br/>
-                  This was a 2-minute pitch video explaining my interest in working with Boot.dev as a marketing engineer.
-                  The video functionality remains in the codebase for demonstration purposes.
+              <div
+                class="video-placeholder"
+                style="
+                  padding: 2rem;
+                  background: #1a1a1a;
+                  border-radius: 8px;
+                  color: #888;
+                "
+              >
+                <p style="margin: 0; text-align: center; font-size: 0.95rem">
+                  <strong style="color: #aaa">Video Placeholder</strong><br />
+                  This was a 2-minute pitch video explaining my interest in
+                  working with Boot.dev as a marketing engineer. The video
+                  functionality remains in the codebase for demonstration
+                  purposes.
                 </p>
               </div>
               <!-- Desktop iframe (hidden on mobile) -->
@@ -186,11 +191,21 @@
             <h2 class="header2">About Me</h2>
             <div class="video-container">
               <!-- Placeholder text for demo mode -->
-              <div class="video-placeholder" style="padding: 2rem; background: #1a1a1a; border-radius: 8px; color: #888;">
-                <p style="margin: 0; text-align: center; font-size: 0.95rem;">
-                  <strong style="color: #aaa;">Video Placeholder</strong><br/>
-                  This was a 3-minute introduction video about my background in marketing, engineering, and media production.
-                  The video functionality remains in the codebase for demonstration purposes.
+              <div
+                class="video-placeholder"
+                style="
+                  padding: 2rem;
+                  background: #1a1a1a;
+                  border-radius: 8px;
+                  color: #888;
+                "
+              >
+                <p style="margin: 0; text-align: center; font-size: 0.95rem">
+                  <strong style="color: #aaa">Video Placeholder</strong><br />
+                  This was a 3-minute introduction video about my background in
+                  marketing, engineering, and media production. The video
+                  functionality remains in the codebase for demonstration
+                  purposes.
                 </p>
               </div>
               <!-- Desktop iframe (hidden on mobile) -->
@@ -329,26 +344,5 @@
 
     <script type="module" src="./script.js"></script>
     <script type="module" src="./videos.js"></script>
-    <script type="module">
-      import StaticGuard from '../staticguard/dist/staticguard.js';
-
-      StaticGuard.init({
-        passwordHash: '210ba3adce0d2c9e4a3c30d0b84ffa0995ca2b8fa69ee0d1910e3732aa345e55',
-        salt: 'hey-boot-salt',
-        headerText: 'Private Site',
-        subheaderText: 'This content is password protected.',
-        guardImage: '/gaurdian-sm2.png',
-        theme: {
-          primaryColor: '#8b4513',
-          backgroundColor: '#faf8f6',
-          pageBackgroundColor: '#3e2723',
-          imageBackgroundColor: '#000000',
-          textColor: '#342e29',
-          errorColor: '#991b1b'
-        },
-        maxAttempts: 5,
-        lockoutDuration: 300000
-      });
-    </script>
   </body>
 </html>
