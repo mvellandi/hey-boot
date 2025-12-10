@@ -1,6 +1,9 @@
 // Vimeo Player SDK
 import Player from "@vimeo/player";
 
+// DEMO MODE: Set to true to disable video playback and show placeholder text
+const DEMO_MODE = true;
+
 // Video IDs for each player
 const VIMEO_VIDEO_IDS = {
   pitch: "1074583104", // Replace with your actual pitch video ID
@@ -18,6 +21,21 @@ function isDesktop() {
 
 // Initialize Vimeo Players
 document.addEventListener("DOMContentLoaded", async () => {
+  // If in demo mode, skip video initialization
+  if (DEMO_MODE) {
+    console.log("Demo mode enabled - video playback disabled");
+    // Remove iframes and show placeholder content
+    for (const playerId of Object.keys(VIMEO_VIDEO_IDS)) {
+      const iframe = document.getElementById(playerId);
+      if (iframe) {
+        iframe.style.display = "none";
+      }
+    }
+    // Enable modal with placeholder content for demo mode
+    enableModalInDemoMode();
+    return;
+  }
+
   // Only initialize iframes on desktop
   if (isDesktop()) {
     // Initialize each player
@@ -135,6 +153,94 @@ async function initializePlayers() {
       } catch (error) {
         console.error(`Error initializing player ${playerId}:`, error);
       }
+    }
+  }
+}
+
+// Enable modal functionality in demo mode with placeholder content
+function enableModalInDemoMode() {
+  const modal = document.getElementById("videoModal");
+  const modalClose = modal?.querySelector(".modal-close");
+  const modalVideo = document.getElementById("modalVideo");
+  const thumbnails = document.querySelectorAll(".video-thumbnail");
+
+  if (!modal || !modalClose || !modalVideo) return;
+
+  // Open modal when thumbnail is clicked
+  thumbnails.forEach((thumbnail) => {
+    thumbnail.addEventListener("click", () => {
+      const videoId = thumbnail.getAttribute("data-video-id");
+
+      // Hide the iframe and show placeholder content
+      modalVideo.style.display = "none";
+
+      // Create placeholder content in modal
+      let placeholderDiv = modal.querySelector(".modal-placeholder");
+      if (!placeholderDiv) {
+        placeholderDiv = document.createElement("div");
+        placeholderDiv.className = "modal-placeholder";
+        placeholderDiv.style.cssText = "position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: #1a1a1a;";
+        modalVideo.parentElement.appendChild(placeholderDiv);
+      }
+
+      // Set placeholder content based on video ID
+      const videoInfo = {
+        pitch: {
+          title: "My Pitch Video",
+          description: "This was a 2-minute pitch video explaining my interest in working with Boot.dev as a marketing engineer.",
+          thumbnail: "/pitch-thumbnail.webp"
+        },
+        about: {
+          title: "About Me Video",
+          description: "This was a 3-minute introduction video about my background in marketing, engineering, and media production.",
+          thumbnail: "/about-thumbnail.webp"
+        }
+      };
+
+      const info = videoInfo[videoId];
+      placeholderDiv.innerHTML = `
+        <div style="text-align: center; max-width: 600px; padding: 2rem;">
+          <img src="${info.thumbnail}" alt="${info.title}" style="width: 100%; max-width: 500px; border-radius: 8px; margin-bottom: 1.5rem;" />
+          <h3 style="color: #aaa; margin-bottom: 1rem; font-size: 1.5rem;">${info.title}</h3>
+          <p style="color: #888; font-size: 1rem; line-height: 1.6;">${info.description}</p>
+          <p style="color: #666; font-size: 0.9rem; margin-top: 1rem;">Video functionality remains in the codebase for demonstration purposes.</p>
+        </div>
+      `;
+
+      placeholderDiv.style.display = "flex";
+
+      // Show the modal
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  // Close modal when close button is clicked
+  modalClose.addEventListener("click", () => {
+    closeModalInDemoMode();
+  });
+
+  // Close modal when clicking outside the content
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModalInDemoMode();
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("active")) {
+      closeModalInDemoMode();
+    }
+  });
+
+  function closeModalInDemoMode() {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+
+    const placeholderDiv = modal.querySelector(".modal-placeholder");
+    if (placeholderDiv) {
+      placeholderDiv.style.display = "none";
     }
   }
 }
